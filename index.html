@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>what, so no shrimp?</title>
+    <link rel="icon" href="/shrimp.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="stuff i guess" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+
+    <h2>markdown to html</h2>
+
+    <h3>options</h3>
+
+    <div id="options">
+  <input type="checkbox" id="br-tags" name="br-tags" value="br-tags-true" />
+  <label for="br-tags"> add &lt;br&gt;&lt;br&gt; tags for paragraph breaks</label><br />
+  <input type="checkbox" id="hr-tags" name="hr-tags" value="hr-tags-true" checked/>
+  <label for="hr-tags"> add &lt;hr&gt; tags for horizontal dividers (replaces ---)</label><br />
+  <input type="checkbox" id="vr-tags" name="vr-tags" value="vr-tags-true" checked/>
+  <label for="vr-tags"> add vertical divider tags (replaces ///)</label><br />
+  <input type="checkbox" id="right-tags" name="right-tags" value="right-tags-true" checked/>
+  <label for="right-tags"> align selected text to right (replaces //)</label><br />
+  <!-- <input type="checkbox" id="post-template" name="post-template" value="post-template-true" />
+  <label for="post-template"> wrap in posting template (elysium)</label><br />-->
+  <input type="checkbox" id="post-template2" name="post-template2" value="post-template2-true" checked/>
+  <label for="post-template2"> wrap in posting template (sunstrike)</label><br />
+</div>
+
+<textarea class="input" placeholder="shift-click the 'replace' button to auto-check all boxes"></textarea>
+<div style="display:flex;">
+  <button class="replaceTool">replace</button>
+<button class="btn" data-clipboard-target="#toCopy2"> 
+copy to clipboard
+</button> </div>
+
+<pre><div class="res2" id="toCopy2">
+
+</div></pre>
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    
+</body>
+</html>
