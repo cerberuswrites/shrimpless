@@ -14,7 +14,7 @@ $(document).ready(function () {
         [/[*~]{4}(.*?)[*~]{4}/gm, '<b style="--accent:var(--grade-b);">$1</b>'],
         [/\*{2}(.*?)\*{2}/gm, "<b>$1</b>"],
         [/\*{1}(.*?)\*{1}/gm, "<i>$1</i>"],
-        [/```html/gm, ""],
+        [/```(.*)\n/gm, ""],
         [/<\/s-info>`\n*/gm, "</s-info>"],
         [/`/gm, ""],
         [/~{2}(.*?)~{2}/gm, '<span style="color:var(--grade-b);">$1</span>'],
