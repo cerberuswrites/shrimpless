@@ -25,8 +25,9 @@ $(document).ready(function () {
     // markdown lists
     output = mreplace([
         [/^- /gm, "[*]"],
-        [/\[\*\]/m, "[list]\n[*]"],
+        [/(?<=\s)\[\*\]/m, "[list]\n[*]"],
         [/\[\*\](?!(?s:.*)\[\*\])(.*)$/gm, "[*]$1\n[/list]"],
+        [/\[\/list]\s\[\/LIST]/gm, "[/LIST]"],
       ], output, );
     
     // markdown headers
