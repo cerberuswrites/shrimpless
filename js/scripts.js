@@ -28,6 +28,7 @@ $(document).ready(function () {
         [/(?<=\s)\[\*\]/m, "[list]\n[*]"],
         [/\[\*\](?!(?s:.*)\[\*\])(.*)$/gm, "[*]$1\n[/list]"],
         [/\[\/list]\s\[\/LIST]/gm, "[/LIST]"],
+        [/\[LIST]\s\[list]/gm, "[LIST]"],
       ], output, );
     
     // markdown headers
