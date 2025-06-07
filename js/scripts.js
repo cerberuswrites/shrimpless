@@ -23,13 +23,13 @@ $(document).ready(function () {
       ], input, );
     
     // markdown lists
-    output = mreplace([
+    /*output = mreplace([
         [/^- /gm, "[*]"],
         [/(?<=\s)\[\*\]/m, "[list]\n[*]"],
         [/\[\*\](?!(?s:.*)\[\*\])(.*)$/gm, "[*]$1\n[/list]"],
         [/\[\/list]\s\[\/LIST]/gm, "[/LIST]"],
         [/\[LIST]\s\[list]/gm, "[LIST]"],
-      ], output, );
+      ], output, );*/
     
     // markdown headers
     output = mreplace([
