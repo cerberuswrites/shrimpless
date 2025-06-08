@@ -30,6 +30,11 @@ $(document).ready(function () {
         [/\[\/list]\s\[\/LIST]/gm, "[/LIST]"],
         [/\[LIST]\s\[list]/gm, "[LIST]"],
       ], output, );*/
+
+    // removes inline comments
+    output = mreplace([
+        [/%%.*%% /gm, ""],
+      ], output, );
     
     // markdown headers
     output = mreplace([
