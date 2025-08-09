@@ -21,6 +21,7 @@ $(document).ready(function () {
         [/~{2}(.*?)~{2}/gm, '<span style="color:var(--grade-b);">$1</span>'],
         [/<span style="color:var\(--grade-b\);"><i>(.*)<\/i><\/span>/gm, '<i style="--accent:var(--grade-b);">$1</i>'],
         [/<i><span style="color:var\(--grade-b\);">(.*)<\/span><\/i>/gm, '<i style="--accent:var(--grade-b);">$1</i>'],
+        [/\s%{2}(.*)%{2}\s/gm, ''],
       ], input, );
     
     // markdown lists
@@ -33,9 +34,9 @@ $(document).ready(function () {
       ], output, );*/
 
     // removes inline comments
-    output = mreplace([
+    /* output = mreplace([
         [/%%.*%% /gm, ""],
-      ], output, );
+      ], output, );*/
     
     // markdown headers
     output = mreplace([
@@ -113,3 +114,4 @@ $(document).ready(function () {
     
 
 })
+
