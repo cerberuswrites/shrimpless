@@ -22,7 +22,7 @@ $(document).ready(function () {
         [/<span style="color:var\(--grade-b\);"><i>(.*)<\/i><\/span>/gm, '<i style="--accent:var(--grade-b);">$1</i>'],
         [/<i><span style="color:var\(--grade-b\);">(.*)<\/span><\/i>/gm, '<i style="--accent:var(--grade-b);">$1</i>'],
         [/\s%{2}(.*)%{2}\s/gm, ''],
-        [/^={3}(.*\n.*)/gm, '[LIST]$1[/LIST]'],
+        [/={3}(.*\n.*)/gm, '[LIST]$1[/LIST]'],
       ], input, );
     
     // markdown lists
@@ -115,5 +115,6 @@ $(document).ready(function () {
     
 
 })
+
 
 
