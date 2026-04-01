@@ -210,3 +210,7 @@ a#zugzylink, a#markdownlink {
 body#zugzyhelper {
   --color-secondary: #ba3838;
 }
+
+@media (max-width: 900px) {
+  body { padding: 0 60px; }
+}
