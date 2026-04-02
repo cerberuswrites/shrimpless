@@ -21,7 +21,7 @@ $(document).ready(function () {
       ], input, );
     
     if ($('input#narration-tag').is(':checked')) {
-        output = output.replace(/\n(?!MILO|SABLE|BIANCA)(\w)/gm, "\nMILO_N: $1")
+        output = output.replace(/\n(?!MILO|SABLE|BIANCA|INVESTIGATOR)(\w)/gm, "\nMILO_N: $1")
     }
     
     var regexArray = [/(?<=\. )(\w)/gm, /^(\w)/gm, /(?<=MILO_N: )(\w)/gm, /(?<=: \[i\])(\w)/gm]
