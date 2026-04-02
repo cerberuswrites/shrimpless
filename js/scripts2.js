@@ -18,13 +18,15 @@ $(document).ready(function () {
         [/^B:/gm, "BIANCA:"],
         [/i'm/gm, "I'm"],
         [/[i](?!\S)/gm, "I"],
+        [/milo/gm, "Milo"],
+        [/schedar/gm, "Schedar"],
       ], input, );
     
     if ($('input#narration-tag').is(':checked')) {
         output = output.replace(/\n(?!MILO|SABLE|BIANCA|INVESTIGATOR)(\w)/gm, "\nMILO_N: $1")
     }
     
-    var regexArray = [/(?<=\. )(\w)/gm, /^(\w)/gm, /(?<=MILO_N: )(\w)/gm, /(?<=: \[i\])(\w)/gm]
+    var regexArray = [/(?<=\. )(\w)/gm, /^(\w)/gm, /(?<=MILO_N: )(\w)/gm, /(?<=: \[i\])(\w)/gm, /(?<=: ")(\w)/gm]
     $.each(regexArray, function( i, regex ) {
       output = output.replace(regex, function(x){return x.toUpperCase();});
     });
