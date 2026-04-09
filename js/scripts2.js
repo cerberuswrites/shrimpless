@@ -18,6 +18,7 @@ $(document).ready(function () {
         [/^B:/gm, "BIANCA:"],
         [/”/gm, "\""],
         [/“/gm, "\""],
+        [/’/gm, "\'"],
       ], input, );
     
 
