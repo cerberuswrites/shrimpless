@@ -16,6 +16,8 @@ $(document).ready(function () {
         [/^M:/gm, "MILO:"],
         [/^S:/gm, "SABLE:"],
         [/^B:/gm, "BIANCA:"],
+        [/”/gm, "\""],
+        [/“/gm, "\""],
       ], input, );
     
 
