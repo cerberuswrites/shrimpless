@@ -17,6 +17,8 @@ $(document).ready(function () {
         [/^S:/gm, "SABLE:"],
         [/^B:/gm, "BIANCA:"],
         [/^I:/gm, "INVESTIGATOR:"],
+        [/^K:/gm, "KILLIAN:"],
+        [/^A:/gm, "AERIS:"],
         [/^(?<!: ")(".*)$/gm, "??????: $1"],
         [/”/gm, "\""],
         [/“/gm, "\""],
