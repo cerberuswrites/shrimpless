@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     // add "MILO_N:" narration tag
     if ($('input#narration-tag').is(':checked')) {
-        output = output.replace(/\n(?!MILO|SABLE|BIANCA|INVESTIGATOR)(\w)/gm, "\nMILO_N: $1")
+        output = output.replace(/\n(?!MILO|SABLE|BIANCA|INVESTIGATOR|KILLIAN|AERIS)(\w)/gm, "\nMILO_N: $1")
     }
 
     var replayInput
