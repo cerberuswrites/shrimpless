@@ -8,6 +8,7 @@
   --color-text-main: #eee;
   --color-primary: #faa61f;
   --color-secondary:#ef4b5c;
+  --color-secondary-alt:#806df0;
   --color-dark:#dbcece;
   --wrapper-height: 77vh;
   --image-max-width: 320px;
@@ -197,7 +198,7 @@ code {
   font-family:'Inconsolata', monospace;
 }
 
-a#zugzylink, a#markdownlink {
+a#zugzylink, a#markdownlink, a#pblink {
   border:0;
   color:#ba3838;
   font-size:28px;
@@ -205,10 +206,15 @@ a#zugzylink, a#markdownlink {
   bottom:16px;
   left:16px;
   &#markdownlink { color: var(--color-primary) }
+  &#pblink { color: var(--color-secondary-alt); left:52px; }
 }
 
 body#zugzyhelper {
   --color-secondary: #ba3838;
+}
+
+body#pb {
+  --color-secondary: var(--color-secondary-alt);
 }
 
 @media (max-width: 900px) {

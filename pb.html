@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>what, so no shrimp?</title>
+    <link rel="icon" href="shrimp.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="no egg also btw" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body id="pb">
+
+  <a id="markdownlink" href="index.html">✱</a>
+
+    <h2>markdown to bbcode</h2>
+    <br><br>
+    <h3 style="display:none;">options</h3>
+
+    <div id="options" style="display:none;">
+  <input type="checkbox" id="narration-tag" name="narration-tag" value="narration-tags-true" checked />
+  <label for="narration-tag"> add "MILO_N: " to lines without a speaker prefix</label><br />
+
+  <input type="checkbox" id="maddox-tag" name="maddox-tag" value="maddox-tags-true" />
+  <label for="maddox-tag"> convert italicised text to maddox's dialogue</label><br />
+</div>
+
+<textarea class="input" placeholder="input markdown here yippee"></textarea>
+<div style="display:flex;">
+  <button class="replaceTool">replace</button>
+<button class="btn" data-clipboard-target="#toCopy2"> 
+copy to clipboard
+</button> </div>
+
+<pre><div class="res2" id="toCopy2">
+
+</div></pre>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/scripts3.js"></script>
+    
+</body>
+
+</html>
+
