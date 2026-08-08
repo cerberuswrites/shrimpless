@@ -16,6 +16,7 @@ $(document).ready(function () {
         [/---/gm, '[hr]'],
         [/\/{2} (.*)$/gm, '[div align="right"]$1[/div]'],
         [/\[\/div\]\n/gm, '[/div]'],
+        [/`/gm, ''],
       ], input, );
     
     let template1b = '[blockquote]';
