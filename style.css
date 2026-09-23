@@ -259,7 +259,7 @@ body#birdzone {
     position:absolute;
     top:0;
     left:0;
-    background:url("/paper_texture_scaled.jpg");
+    background:url("paper_texture_scaled.jpg");
     z-index:-1;
     mix-blend-mode: overlay;
     opacity:0.15;
