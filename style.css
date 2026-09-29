@@ -461,6 +461,129 @@ body#birdzone {
     }
     
   }
+
+
+
+  & #notes {
+    --w:350px;
+    --h:50px;
+    position:absolute;
+    top:50%;
+    left:64px;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:16px;
+    font-family:"Inter";
+    letter-spacing: 5%;
+    max-width:var(--w);
+    & textarea {
+      font-size:20px;
+      height:var(--h);
+      padding:32px;
+      font-family:inherit;
+      line-height:1.8;
+      letter-spacing: inherit;
+      background-color:rgba(50,50,50,0.1);
+      transition:0.5s ease;
+      border-color:var(--color-text-main);
+      width:100%;
+      max-height:var(--h);
+      box-sizing: border-box;
+      &:focus { 
+        outline:2px solid var(--red); 
+        outline-offset:4px;
+        height:var(--h);
+        backdrop-filter:blur(6px);
+      }
+    }
+
+    & .pin, & .hide {
+      border:1px solid var(--color-text-main);
+      padding:16px;
+      letter-spacing: 15%;
+      cursor:pointer;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    &:is(.pinned) {
+      --w: 420px;
+      --h: 350px;
+      & textarea {
+        height:420px;
+        backdrop-filter:blur(6px);
+      }
+
+      & .pin {
+        font-size:0px;
+        letter-spacing:0;
+        &::before {
+          content:"[PINNED]";
+          font-size:initial;
+          letter-spacing: 15%;
+        }
+      }
+    }
+
+
+    &:is(.hidden) {
+      --w: 50px;
+      --h: 50px;
+      
+      & textarea {
+        padding:0;
+        color:transparent;
+        overflow:hidden;
+        min-height:unset;
+        pointer-events: none;
+        backdrop-filter: unset;
+        opacity:0.2;
+      }
+
+      &::before {
+        content:"*";
+        font-size:22px;
+        line-height:0;
+        font-weight:200;
+        color:var(--color-text-main);
+        position:absolute;
+        bottom:22px;
+        left:19px;
+        z-index:2;
+        opacity:0.2;
+      }
+
+      & .hide, & .pin {
+        font-size:0px;
+        letter-spacing:0;
+        width:var(--w);
+        height:var(--h);
+        padding:0;
+        
+        &::before {
+          content:"+";
+          font-size:22px;
+          line-height:0;
+          font-weight:200;
+        }
+      }
+
+      & .pin {
+        pointer-events: none;
+        opacity:0.2;
+        &::before {
+          content:"/";
+        }
+      }
+      
+    }
+    
+  } 
+
 }
 
 

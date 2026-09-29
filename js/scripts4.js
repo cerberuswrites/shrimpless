@@ -1,6 +1,6 @@
 $(document).ready(function () {
     getTheme();
-
+    getNotes();
     timeSetup();
 
     setInterval(function() {
@@ -109,5 +109,43 @@ function getTheme() {
     const theme = localStorage.getItem('theme');
     if ( theme == "dark" ) {
         $("body#birdzone").addClass("night");
+    }
+}
+
+$("span#notes .pin").on("click", function() {
+    $("#notes").toggleClass("pinned");
+    if (  $("#notes").hasClass("pinned") ) {
+        localStorage.setItem('notes_pinned', true);
+    } else {
+        localStorage.setItem('notes_pinned', false);
+    }
+});
+
+$("span#notes .hide").on("click", function() {
+    $("#notes").toggleClass("hidden");
+    if (  $("#notes").hasClass("hidden") ) {
+        localStorage.setItem('notes_hidden', true);
+    } else {
+        localStorage.setItem('notes_hidden', false);
+    }
+});
+
+$("span#notes textarea").on("input", function() {
+    var val = $("span#notes textarea").val();
+    localStorage.setItem('notes', val);
+});
+
+function getNotes() {
+    const notes = localStorage.getItem('notes');
+    const notes_pinned = localStorage.getItem('notes_pinned');
+    const notes_hidden = localStorage.getItem('notes_hidden');
+    if ( notes ) {
+        $("span#notes textarea").val(notes);
+    }
+    if ( notes_pinned ) {
+        $("#notes").addClass("pinned");
+    }
+    if ( notes_hidden ) {
+        $("#notes").addClass("hidden");
     }
 }
