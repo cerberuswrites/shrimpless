@@ -20,27 +20,36 @@
 
     <div class="container">
 
-    <div class="clock">
-        <div class="middle"></div>
-        <div class="middle1"></div>
-        <div id="hour" class="hour"></div>
-        <div id="minute" class="minute"></div>
-        <div id="second" class="second"></div>
+        <div class="clock">
+            <div class="middle"></div>
+            <div class="middle1"></div>
+            <div id="hour" class="hour"></div>
+            <div id="minute" class="minute"></div>
+            <div id="second" class="second"></div>
+        </div>
+
+        <div class="time">
+            <div class="hour"></div>
+            <div class="min"></div>
+            <div class="ampm"></div>
+        </div>
+
     </div>
 
-    <div class="time">
-        <div class="hour"></div>
-        <div class="min"></div>
-        <div class="ampm"></div>
-    </div>
-
+    <div class="alarms">
+        <span id="alarm-details">no alarm set.</span>
+        <input class="alarm-time" type="text" value="14:30" />
+        <input class="alarm-text" type="text" value="...">
+        <button id="set-alarm">></button>
+        
     </div>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/birb.embed.js"></script>
     <script src="js/scripts4.js"></script>
+    <script src="js/jquery-clock-timepicker.min.js"></script>
 
-    
+    <audio id="alarm-audio" src="js/sound.mp3" loop></audio>
     
 </body>
 

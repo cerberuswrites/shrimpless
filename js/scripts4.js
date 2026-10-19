@@ -3,6 +3,8 @@ $(document).ready(function () {
     getNotes();
     timeSetup();
 
+    initTimePicker();
+
     setInterval(function() {
         var d = new Date();
         updateClock(d);
@@ -148,4 +150,65 @@ function getNotes() {
     if ( notes_hidden ) {
         $("#notes").addClass("hidden");
     }
+}
+
+
+$("button#set-alarm").on("click", function() {
+    let alarmTime = $('.alarm-time').clockTimePicker('value');
+    let alarmText = $("input.alarm-text").val();
+    $("span#alarm-details").text("alarm set for " + alarmTime + ".");
+    $(".alarms").addClass("alarm-active");
+   setInterval(function() {
+        let now = new Date();
+        let timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+        if (alarmTime) {
+            let currentHM = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+            if (currentHM === alarmTime) {
+                $('#alarm-audio')[0].play();
+                alert(alarmText);
+
+                $('#alarm-audio')[0].pause();
+                $('#alarm-audio')[0].currentTime = 0;
+                alarmTime = null;
+                alarmText = null;
+                $(".alarms").removeClass("alarm-active");
+                $("span#alarm-details").text("no alarm set.");
+            }
+        }
+    }, 1000);
+});
+
+
+function initTimePicker() {
+    $('input.alarm-time').clockTimePicker({
+        afternoonHoursInOuterCircle: false,
+        alwaysSelectHoursFirst: true,
+        autosize: true,
+
+        // custom colors
+        colors: {
+            buttonTextColor: '#dbcece',
+            clockFaceColor: '#333',
+            clockInnerCircleTextColor: '#eee',
+            clockInnerCircleUnselectableTextColor: '#555',
+            clockOuterCircleTextColor: '#eee',
+            clockOuterCircleUnselectableTextColor: '#555',
+            hoverCircleColor: '#ef4b5c',
+            popupBackgroundColor: '#111',
+            popupHeaderBackgroundColor: '#806df0',
+            popupHeaderTextColor: '#eee',        
+            selectorColor: '#806df0',       
+            selectorNumberColor: '#eee',
+            signButtonColor: '#eee',
+            signButtonBackgroundColor: '#806df0'
+        },
+
+        fonts: {
+            fontFamily: 'Chivo',
+            clockOuterCircleFontSize: 14,
+            clockInnerCircleFontSize: 12,
+            buttonFontSize: 20
+        },
+        useDurationPlusSign: false,
+    });
 }
